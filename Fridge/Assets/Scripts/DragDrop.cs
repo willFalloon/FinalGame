@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
@@ -9,6 +10,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
+    private CanvasScaler canvasScaler;
 
     private void Awake()
     {
@@ -26,8 +28,8 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 
     public void OnDrag(PointerEventData eventData)
     {
-        rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
-
+        Debug.Log("OnDrag");
+        rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor * 0.5f;
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -36,7 +38,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         GameObject dropTarget = eventData.pointerCurrentRaycast.gameObject;
 
 
-        if (dropTarget != null && dropTarget.GetComponent<BinDrop>() || dropTarget.GetComponent<EatDrop>()!= null)
+        if (dropTarget != null && dropTarget.GetComponent<BinDrop>() || dropTarget.GetComponent<EatDrop>() != null)
         {
 
             canvasGroup.alpha = 0f;

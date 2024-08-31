@@ -10,11 +10,14 @@ public class SpawnManagerMiddle : MonoBehaviour
     public float spawnPosX = 20;
     private RectTransform canvas;  // Reference to the Canvas RectTransform
     public bool plsWork = true;
+    public float foodMax = 0;
+
     void Start()
     {
         // Find the Canvas in the scene and assign it
         canvas = FindObjectOfType<Canvas>().GetComponent<RectTransform>();
         InvokeRepeating("SpawnFood", 0.0f, 0.01f);
+
         if (canvas == null)
         {
             Debug.LogError("Canvas not found in the scene. Make sure there is a Canvas present.");
@@ -23,12 +26,17 @@ public class SpawnManagerMiddle : MonoBehaviour
 
     void Update()
     {
-
+        // You can add update logic here if needed
     }
-
 
     void SpawnFood()
     {
+        if (foodMax >= 30)
+        {
+            CancelInvoke("SpawnFood");
+            return;
+        }
+
         Vector3 spawnPos = new Vector3(
             Random.Range(-spawnRangeX, spawnRangeX) + spawnPosX,
             0,
@@ -36,7 +44,7 @@ public class SpawnManagerMiddle : MonoBehaviour
         );
 
         int foodIndex = Random.Range(0, foodItems.Length);
-        GameObject spawnedItem = Instantiate(foodItems[foodIndex], spawnPos, Quaternion.identity);
+        GameObject spawnedItem = Instantiate(foodItems[foodIndex]);
 
         // Set the parent to the Canvas RectTransform
         if (canvas != null)
@@ -45,6 +53,7 @@ public class SpawnManagerMiddle : MonoBehaviour
             if (spawnedRectTransform != null)
             {
                 spawnedRectTransform.SetParent(canvas, false);
+                spawnedRectTransform.anchoredPosition = spawnPos; // Set the UI position
             }
             else
             {
@@ -52,5 +61,6 @@ public class SpawnManagerMiddle : MonoBehaviour
             }
         }
 
+        foodMax++;
     }
 }
