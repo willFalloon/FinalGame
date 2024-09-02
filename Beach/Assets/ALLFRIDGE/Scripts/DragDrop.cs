@@ -16,6 +16,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     {
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
+        canvasScaler = canvas.GetComponent<CanvasScaler>();
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -28,7 +29,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 
     public void OnDrag(PointerEventData eventData)
     {
-        
+
 
         Debug.Log("OnDrag");
         rectTransform.anchoredPosition += eventData.delta / (canvasScaler.scaleFactor * 1.6f);
