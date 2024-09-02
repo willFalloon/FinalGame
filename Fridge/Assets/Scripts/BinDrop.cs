@@ -13,9 +13,12 @@ public class BinDrop : MonoBehaviour, IDropHandler
     public void OnDrop(PointerEventData eventData)
     {
         Debug.Log("OnDrop");
+
         if (eventData.pointerDrag != null)
         {
+
             eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+            throw new System.NotImplementedException();
 
         }
         if (twoX != null)
@@ -35,6 +38,12 @@ public class BinDrop : MonoBehaviour, IDropHandler
         }
 
     }
+
+        
+ 
+
+
+
 
 
 }

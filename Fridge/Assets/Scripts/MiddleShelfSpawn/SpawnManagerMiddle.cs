@@ -37,11 +37,12 @@ public class SpawnManagerMiddle : MonoBehaviour
             return;
         }
 
-        Vector3 spawnPos = new Vector3(
+        Vector3 spawnPos = new Vector3
+            (
             Random.Range(-spawnRangeX, spawnRangeX) + spawnPosX,
-            0,
-            spawnPosY
-        );
+            
+            spawnPosY, 0
+            );
 
         int foodIndex = Random.Range(0, foodItems.Length);
         GameObject spawnedItem = Instantiate(foodItems[foodIndex]);
