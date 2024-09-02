@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/BeachScene/Beach Scene.unity
     guid: f6b366ddaa16a19479f4d4d8b60cbe1c
+  - enabled: 1
+    path: Assets/ALLFRIDGE/FridgeScene.unity
+    guid: 5e924f2d554dbd84985a99dc24ddc759
   m_configObjects: {}

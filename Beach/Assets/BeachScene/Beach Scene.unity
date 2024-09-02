@@ -80704,7 +80704,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd80530e74e05ca44a5f972e27c8a307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FridgeScene: 
+  FridgeScene: FridgeScene
 --- !u!65 &1978289027
 BoxCollider:
   m_ObjectHideFlags: 0
