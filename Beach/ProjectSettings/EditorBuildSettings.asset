@@ -6,8 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Start/Beginning.unity
+    path: Assets/StartEndAndCanvas/Beginning.unity
     guid: 825d2be8becac1f44b463bb9b6f30c24
+  - enabled: 1
+    path: Assets/LevelDescriptions/BabyDescription.unity
+    guid: de1c5da5d3504c04993c561a5bebee4e
   - enabled: 1
     path: Assets/BABY/Ear.unity
     guid: 0aa15272729ab0e4e9bbbca37b05c7d4
@@ -15,9 +18,18 @@ EditorBuildSettings:
     path: Assets/BABY/EarGameplay.unity
     guid: b4655efb3f25e544490ac323f6d2c418
   - enabled: 1
+    path: Assets/LevelDescriptions/KidDescription.unity
+    guid: d7c2077135705664489ac1667dfac0ca
+  - enabled: 1
     path: Assets/BeachScene/Beach Scene.unity
     guid: f6b366ddaa16a19479f4d4d8b60cbe1c
   - enabled: 1
+    path: Assets/LevelDescriptions/AdultDescription.unity
+    guid: 95e4b773571584d48b9737657f77aedc
+  - enabled: 1
     path: Assets/ALLFRIDGE/FridgeScene.unity
     guid: 5e924f2d554dbd84985a99dc24ddc759
+  - enabled: 1
+    path: Assets/StartEndAndCanvas/FinalScene.unity
+    guid: 9db0a6571015c2643aa857204d4610b5
   m_configObjects: {}
